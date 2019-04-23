@@ -1,0 +1,30 @@
+{
+  "name": "meme-bot",
+  "version": "0.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/adityaparab/MemeBot.git",
+  "author": "Aditya Parab <aditya_parab@epam.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^24.0.11",
+    "@types/node": "^11.13.7",
+    "babel-jest": "^24.7.1",
+    "concurrently": "^4.1.0",
+    "jest": "^24.7.1",
+    "nodemon": "^1.18.11",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.16.0",
+    "typescript": "^3.4.4"
+  },
+  "scripts": {
+    "test": "jest",
+    "tsc": "tsc",
+    "tsc:watch": "tsc --watch",
+    "build": "npm run tsc",
+    "prebuild": "npm test && npm run clean",
+    "nodemon": "nodemon dist/index.js",
+    "clean": "rimraf ./dist",
+    "predev": "npm run clean && npm run tsc",
+    "dev": "concurrently -k \"npm run tsc:watch\" \"npm run nodemon\""
+  }
+}
