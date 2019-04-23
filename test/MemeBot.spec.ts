@@ -1,22 +1,22 @@
+import { config } from 'dotenv';
+import { DiscordTokenNotConfiguredError } from '../src/errors/MissingDiscirdTokenException';
 import { MemeBot } from '../src/MemeBot';
 
 describe('MemeBot Instantiation', () => {
-    it('should verify if MemeBot is instantiable', () => {
-        const memeBot = new MemeBot();
+
+    it('should verify if lack of token throws an error', () => {
+        expect(() => new MemeBot()).toThrowError(DiscordTokenNotConfiguredError);
+    });
+
+    it('should verify if instantiation succeeds when token is configured correctly in the environment', () => {
+        const token = 'some random token';
+        const memeBot = new MemeBot(token);
         expect(memeBot).not.toBeNull();
     });
 
-    it('should verify if default MemeBot name is setup correctly', () => {
-        const expectedMemeBotName = 'MemeBot';
-        const memeBot = new MemeBot();
-
-        expect(memeBot.name).toEqual(expectedMemeBotName);
-    });
-
-    it('should verify if custom MemeBot name is setup correctly', () => {
-        const expectedMemeBotName = 'TrollBot';
-        const memeBot = new MemeBot(expectedMemeBotName);
-
-        expect(memeBot.name).toEqual(expectedMemeBotName);
+    it('should verify if token is configured correctly', () => {
+        const token = 'some random token';
+        const memeBot = new MemeBot(token);
+        expect(memeBot.token).toEqual(token);
     });
 });
