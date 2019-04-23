@@ -1,5 +1,5 @@
 import { Client } from 'discord.js';
-import { DiscordTokenNotConfiguredError } from './errors/MissingDiscirdTokenException';
+import { DiscordTokenNotConfiguredError } from './errors/DiscordTokenNotConfiguredError';
 import { CommandHandler } from './modules/CommandHandler';
 
 export class MemeBot {

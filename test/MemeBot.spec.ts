@@ -1,5 +1,4 @@
-import { config } from 'dotenv';
-import { DiscordTokenNotConfiguredError } from '../src/errors/MissingDiscirdTokenException';
+import { DiscordTokenNotConfiguredError } from '../src/errors/DiscordTokenNotConfiguredError';
 import { MemeBot } from '../src/MemeBot';
 
 describe('MemeBot Instantiation', () => {

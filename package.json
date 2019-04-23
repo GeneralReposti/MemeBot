@@ -19,7 +19,7 @@
   },
   "scripts": {
     "test": "jest",
-    "tdd":"jest --watch",
+    "tdd": "jest --watch",
     "tsc": "tsc",
     "tsc:watch": "tsc --watch",
     "build": "npm run tsc",
