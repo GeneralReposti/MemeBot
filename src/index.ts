@@ -1,5 +1,6 @@
 import { config } from 'dotenv';
 import { MemeBot } from './MemeBot';
+import { AbstractParser } from './modules/AbstractParser';
 
 config();
 
